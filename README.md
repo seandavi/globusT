@@ -6,13 +6,16 @@ I would propose using one of the language bindings, such as python, to build a m
 
 ## Proposal
 
-- globust scp 
-  - Synchronous transfer, basically like scp
-  - takes GO://GLOBUSENDPOINT/path as names
+Would take globus endpoint/paths as URIs.
+
+- globust scp (with flag for async or synchronous)
+  - Transfer, basically like scp
+  - async transfer returns task id
 - globust ls
   - list an endpoint directory
-- globust transfer
-  - async transfer, returns task ID
+- globus sync (with flag for async or synchronous)
+  - like rsync
+  - async rsync returns task id
 - globust task TASKID
   - return status information about the transfer task where TASKID comes from globust transfer
 - globust cancel TASKID
